@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<include file="header.html" />
+<style>
+    [x-cloak] {
+        display: none;
+    }
+</style>
+<body class="font-sans p-5">
+    <include file="menu.html" />
+
+    <!-- 创建一个简单的交互组件 -->
+    <div class="card border border-gray-300 p-5 rounded-lg max-w-md mx-auto mt-10">
+        <div x-data="{ tab: 'foo' }">
+            <div class="flex space-x-4 mb-4">
+                <button :class="tab === 'foo' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'" @click="tab = 'foo'" class="px-4 py-2 rounded hover:bg-gray-300">Foo</button>
+                <button :class="tab === 'bar' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'" @click="tab = 'bar'" class="px-4 py-2 rounded hover:bg-gray-300">Bar</button>
+            </div>
+        
+            <div x-show="tab === 'foo'" class="p-4 border rounded bg-white shadow">Tab Foo</div>
+            <div x-show="tab === 'bar'" class="p-4 border rounded bg-white shadow" x-cloak>Tab Bar</div>
+        </div>
+    </div>
+</body>
+
+</html>

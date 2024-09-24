@@ -1,0 +1,21 @@
+<div class="header bg-gray-800 text-white p-4 flex items-center justify-between">
+    <h1 class="text-3xl"><a href="/">Alpine.js Demo</a></h1>
+    <nav class="ml-10">
+        <ul class="flex space-x-4">
+            <li class="relative" x-data="{ open: false }" @click.away="open = false">
+                <a href="#" @click.prevent="open = !open" class="hover:underline">Base</a>
+                <ul x-show="open" class="absolute left-0 mt-1 bg-white text-black rounded shadow-lg w-48">
+                    <li><a href="/base/count" class="block px-4 py-2 hover:bg-gray-200">计数器</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">子菜单2</a></li>
+                </ul>
+            </li>
+            <li class="relative" x-data="{ open: false }" @click.away="open = false">
+                <a href="#" @click.prevent="open = !open" class="hover:underline">菜单2</a>
+                <ul x-show="open" class="absolute left-0 mt-1 bg-white text-black rounded shadow-lg w-48">
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">子菜单1</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">子菜单2</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>

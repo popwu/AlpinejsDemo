@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<include file="header.html" />
+
+<body class="font-sans p-5">
+    <include file="menu.html" />
+
+    <!-- 创建一个简单的交互组件 -->
+    <div x-data="{ count: 0 }" class="card border border-gray-300 p-5 rounded-lg max-w-md mx-auto mt-10">
+        <h2 class="text-xl font-semibold mb-3">计数器</h2>
+        <p x-text="'当前计数：' + count" class="mb-3"></p>
+        <div class="flex space-x-2">
+            <button @click="count++" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">增加计数</button>
+            <button @click="count = 0" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-700">重置计数</button>
+            <button @click="count--" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700">减少计数</button>
+        </div>
+    </div>
+</body>
+
+</html>
